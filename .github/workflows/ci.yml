@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Test PDF loader
+        run: |
+          python -c "from rag.loader import load_pdf; print('loader OK')"
+
+      - name: Test chunker
+        run: |
+          python -c "from rag.chunker import chunk_pages; print('chunker OK')"
+
+      - name: Test embedder imports
+        run: |
+          python -c "from rag.embedder import build_index, load_index; print('embedder OK')"
+
+      - name: Test API imports
+        run: |
+          python -c "from api.main import app; print('API OK')"
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker images
+        run: docker compose build
