@@ -1,3 +1,5 @@
+![CI](https://github.com/Akhila854/rag-document-qa/actions/workflows/ci.yml/badge.svg) 
+
 # 📄 RAG Document Q&A System
 
 A production-ready Retrieval-Augmented Generation (RAG) system that lets you upload any PDF and ask questions about it using AI.
