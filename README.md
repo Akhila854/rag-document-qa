@@ -195,4 +195,11 @@ Full docs at `http://localhost:8080/docs`
 
 ## 📸 Demo
 
-![RAG Demo](docs/demo.png)
+![RAG Demo](docs/demo.png) 
+
+## 🗺️ Roadmap
+
+- [ ] Add support for multiple PDFs in one session
+- [ ] Add conversation memory (multi-turn Q&A)
+- [ ] Add evaluation metrics (retrieval precision, answer faithfulness)
+- [ ] Switch embedding model to support multilingual documents
