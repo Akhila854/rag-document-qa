@@ -190,3 +190,7 @@ Full docs at `http://localhost:8080/docs`
 
 **Answer:** The Adam optimizer was used with β1=0.9, β2=0.98 and ε=10⁻⁹.
 *(Source: attention_is_all_you_need.pdf, Page 7)*
+
+## 📸 Demo
+
+![RAG Demo](docs/demo.png)
